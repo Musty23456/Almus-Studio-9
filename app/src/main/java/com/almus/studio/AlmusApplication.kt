@@ -11,3 +11,4 @@ class AlmusApplication : Application() {
         super.onCreate()
     }
 }
+CrashReporter.install(this)
