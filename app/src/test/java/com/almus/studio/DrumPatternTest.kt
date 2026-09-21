@@ -8,8 +8,8 @@ import org.junit.Test
 
 class DrumPatternTest {
     @Test fun normalizesStepsAndVelocities() {
-        val p = DrumPattern(16, 1, listOf(DrumSoundPattern(36, "Kick", listOf(120, -2))))
-            .normalized()
+        val p = DrumPattern(steps = 16, bars = 1, sounds = listOf(DrumSoundPattern(36, "Kick", listOf(120, -2))))
+    .normalized()
         assertEquals(16, p.steps)
         assertEquals(16, p.sounds.first().velocities.size)
         assertEquals(120, p.sounds.first().velocities[0])
