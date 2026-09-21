@@ -145,7 +145,7 @@ class StudioViewModel(application: Application) : AndroidViewModel(application) 
     }
 
     private fun startUiPollingLoop() {
-        viewModelScope.launch {
+        viewModelScope.launch(kotlinx.coroutines.Dispatchers.Main) {
             while (coroutineContext.isActive) {
                 _playheadFrame.value = AudioEngine.getPlayheadFrame()
                 if (_transportState.value == TransportState.Playing) midiPlayback.update(_playheadFrame.value)
