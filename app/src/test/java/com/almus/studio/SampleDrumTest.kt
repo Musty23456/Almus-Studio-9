@@ -27,7 +27,7 @@ class SampleDrumTest {
         assertTrue(kit.samples.size <= 2)
     }
     @Test fun samplerControlsAreClampedAndPersistable() {
-        val s = DrumSample("x", 36, "Kick", "kick.wav", 100, 120, -3f, -0.5f, 10, 1000, 200, 300, true, true, true).normalized()
+        val s = DrumSample("x", 36, "Kick", "kick.wav", 100, 120, -3f, -0.5f, 10, 1000, 200, 300, true, true)
         assertEquals(10L, s.startFrame)
         assertEquals(1000L, s.endFrame)
         assertEquals(200L, s.fadeInFrames)
